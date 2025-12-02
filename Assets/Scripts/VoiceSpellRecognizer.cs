@@ -8,7 +8,6 @@ public class VoiceSpellRecognizer : MonoBehaviour
 {
     [Header("Recognition")]
     public ConfidenceLevel minConfidence = ConfidenceLevel.Medium;
-    [Tooltip("Anty-dubler: minimalny odstêp miêdzy kolejnymi rozpoznaniami (s).")]
     public float minInterval = 0.8f;
 
     [Header("Opcjonalnie: push-to-talk (V)")]

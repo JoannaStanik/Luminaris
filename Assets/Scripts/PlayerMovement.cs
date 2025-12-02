@@ -5,6 +5,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public float walkSpeed = 5f;
     public float runSpeed = 9f;
+    public float jumpHeight = 8f;
     public float gravity = 20f;
 
     private CharacterController controller;
@@ -12,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     public CameraMovement cameraOrbit;
 
     private Vector3 velocity;
-    private bool IsRunning;
+    private bool isRunning;
 
     void Start()
     {
@@ -26,8 +27,8 @@ public class PlayerMovement : MonoBehaviour
         float v = Input.GetAxis("Vertical");
         Vector3 input = new Vector3(h, 0, v);
 
-        IsRunning = Input.GetKey(KeyCode.LeftShift);
-        float currentSpeed = IsRunning ? runSpeed : walkSpeed;
+        isRunning = Input.GetKey(KeyCode.LeftShift);
+        float currentSpeed = isRunning ? runSpeed : walkSpeed;
 
         if (input.magnitude > 0.1f)
         {
@@ -39,12 +40,29 @@ public class PlayerMovement : MonoBehaviour
             transform.forward = Vector3.Lerp(transform.forward, moveDir, Time.deltaTime * 10f);
 
             animator.SetFloat("Speed", input.magnitude);
-            animator.SetBool("IsRunning", IsRunning);
+            animator.SetBool("IsRunning", isRunning);
         }
         else
         {
             animator.SetFloat("Speed", 0f);
             animator.SetBool("IsRunning", false);
-        }   
+        }
+
+        if (controller.isGrounded)
+        {
+            velocity.y = -1f;
+
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                velocity.y = jumpHeight;
+                animator.SetTrigger("Jump");
+            }
+        }
+        else
+        {
+            velocity.y -= gravity * Time.deltaTime;
+        }
+
+        controller.Move(velocity * Time.deltaTime);
     }
 }

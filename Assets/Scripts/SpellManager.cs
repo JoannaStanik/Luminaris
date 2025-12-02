@@ -35,7 +35,6 @@ public class SpellManager : MonoBehaviour
         Instantiate(prefab, pos, rot);
     }
 
-    // --- Zaklêcia ---
     public void CastIgnis() { if (HasMana(ignisCost)) { Spawn(ignisPrefab); Spend(ignisCost); } }
     public void CastFulmen() { if (HasMana(fulmenCost)) { Spawn(fulmenPrefab); Spend(fulmenCost); } }
     public void CastTerra() { if (HasMana(terraCost)) { Spawn(terraPrefab); Spend(terraCost); } }
