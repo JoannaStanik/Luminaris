@@ -6,13 +6,13 @@ TerrainLayer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PathLayer
-  m_DiffuseTexture: {fileID: 2800000, guid: 08abe4ebe80f2a8419b792acb0d20542, type: 3}
-  m_NormalMapTexture: {fileID: 2800000, guid: df03f46979b9391479c23bf6daef5213, type: 3}
+  m_Name: DarkerGrassLayer
+  m_DiffuseTexture: {fileID: 2800000, guid: 73c874f4558c0d9439b0432b7896a606, type: 3}
+  m_NormalMapTexture: {fileID: 0}
   m_MaskMapTexture: {fileID: 0}
-  m_TileSize: {x: 50, y: 50}
+  m_TileSize: {x: 2, y: 2}
   m_TileOffset: {x: 0, y: 0}
-  m_Specular: {r: 0, g: 0, b: 0, a: 0}
+  m_Specular: {r: 0.050980397, g: 0.18823531, b: 0.10196079, a: 0}
   m_Metallic: 0
   m_Smoothness: 0
   m_NormalScale: 1
