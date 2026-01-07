@@ -34,11 +34,6 @@ public class EnemyWalk : MonoBehaviour
 
         if (Time.frameCount % 60 == 0)
         {
-            Debug.Log($"[AgentProbe] onNav:{agent.isOnNavMesh} hasPath:{agent.hasPath} " +
-                      $"status:{agent.pathStatus} pending:{agent.pathPending} " +
-                      $"stopped:{agent.isStopped} speed:{agent.speed} " +
-                      $"rem:{agent.remainingDistance:0.00} " +
-                      $"vel:{agent.desiredVelocity.magnitude:0.00}");
         }
     }
 

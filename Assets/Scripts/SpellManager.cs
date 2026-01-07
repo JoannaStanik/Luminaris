@@ -20,6 +20,8 @@ public class SpellManager : MonoBehaviour
     public float ignisCost = 10f, fulmenCost = 12f, terraCost = 8f, aerisCost = 6f,
                  luxCost = 10f, curatioCost = 10f, tempusCost = 15f, clarusCost = 5f;
 
+    public ShieldController playerShield;
+
     bool HasMana(float cost) => mana >= cost;
     void Spend(float cost) => mana -= cost;
 
@@ -35,12 +37,42 @@ public class SpellManager : MonoBehaviour
         Instantiate(prefab, pos, rot);
     }
 
-    public void CastIgnis() { if (HasMana(ignisCost)) { Spawn(ignisPrefab); Spend(ignisCost); } }
-    public void CastFulmen() { if (HasMana(fulmenCost)) { Spawn(fulmenPrefab); Spend(fulmenCost); } }
-    public void CastTerra() { if (HasMana(terraCost)) { Spawn(terraPrefab); Spend(terraCost); } }
-    public void CastAeris() { if (HasMana(aerisCost)) { Spawn(aerisPrefab); Spend(aerisCost); } }
-    public void CastLux() { if (HasMana(luxCost)) { Spawn(luxShieldPrefab); Spend(luxCost); } }
-    public void CastCuratio() { if (HasMana(curatioCost)) { Spawn(curatioPrefab); Spend(curatioCost); } }
-    public void CastTempus() { if (HasMana(tempusCost)) { Spawn(tempusPrefab); Spend(tempusCost); } }
-    public void CastClarus() { if (HasMana(clarusCost)) { Spawn(clarusPrefab); Spend(clarusCost); } }
+    public void CastIgnis() 
+    { 
+        if (HasMana(ignisCost)) { Spawn(ignisPrefab); Spend(ignisCost); } 
+    }
+    public void CastFulmen() 
+    { 
+        if (HasMana(fulmenCost)) { Spawn(fulmenPrefab); Spend(fulmenCost); } 
+    }
+    public void CastTerra() 
+    { 
+        if (HasMana(terraCost)) { Spawn(terraPrefab); Spend(terraCost); } 
+    }
+    public void CastAeris() 
+    { 
+        if (HasMana(aerisCost)) { Spawn(aerisPrefab); Spend(aerisCost); } 
+    }
+    public void CastLux() 
+    {
+        if (!HasMana(luxCost)) return;
+
+        if (playerShield != null)
+            playerShield.Activate();
+        else
+            Spawn(luxShieldPrefab);
+        Spend(luxCost);
+    }
+    public void CastCuratio() 
+    { 
+        if (HasMana(curatioCost)) { Spawn(curatioPrefab); Spend(curatioCost); } 
+    }
+    public void CastTempus() 
+    { 
+        if (HasMana(tempusCost)) { Spawn(tempusPrefab); Spend(tempusCost); } 
+    }
+    public void CastClarus() 
+    { 
+        if (HasMana(clarusCost)) { Spawn(clarusPrefab); Spend(clarusCost); } 
+    }
 }

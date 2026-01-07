@@ -63,6 +63,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 05224ec7e4d85c14dbf345dd08810e67, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2735600020731692673}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 05224ec7e4d85c14dbf345dd08810e67, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7049890076224589374}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 05224ec7e4d85c14dbf345dd08810e67, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -7414839674117190005}
   m_SourcePrefab: {fileID: 100100000, guid: 05224ec7e4d85c14dbf345dd08810e67, type: 3}
 --- !u!1 &8588061054967466627 stripped
 GameObject:
@@ -76,7 +82,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8588061054967466627}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 845c415f3181b4840ab566c40e714752, type: 3}
   m_Name: 
@@ -95,3 +101,39 @@ MonoBehaviour:
   isScaling: 1
   useEasingForScaling: 1
   scaleLerpSpeed: 1.11
+--- !u!114 &7049890076224589374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8588061054967466627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd5f6193e94da3648a08868eef8a54b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 12
+  damage: 25
+  lifeTime: 4
+--- !u!135 &-7414839674117190005
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8588061054967466627}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 1.2326106
+  m_Center: {x: 0, y: -0.37860823, z: 0}
