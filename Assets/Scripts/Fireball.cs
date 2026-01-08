@@ -2,14 +2,14 @@ using UnityEngine;
 
 public class Fireball : MonoBehaviour
 {
-    public float speed = 12f;
+    public float speed = 60f;
     public int damage = 25;
     public float lifeTime = 4f;
     void Start() => Destroy(gameObject, lifeTime);
 
     void Update()
     {
-        transform.position += transform.forward * speed * Time.deltaTime;
+        transform.position += transform.right * speed * Time.deltaTime;
     }
 
     private void OnTriggerEnter(Collider other)
