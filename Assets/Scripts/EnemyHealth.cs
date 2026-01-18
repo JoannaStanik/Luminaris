@@ -16,12 +16,14 @@ public class EnemyHealth : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            currentHealth = 0;
             Die();
         }
     }
 
     void Die()
     {
+        Debug.Log($"{name} died");
         Destroy(gameObject);
     }
 }

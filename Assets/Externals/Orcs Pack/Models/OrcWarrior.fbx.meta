@@ -1,107 +1,266 @@
 fileFormatVersion: 2
 guid: e9025fab2d17e473697c4b89943a657d
-timeCreated: 1517352088
-licenseType: Store
+AssetOrigin:
+  serializedVersion: 1
+  productId: 108361
+  packageName: Orc Caster and Fighter Pack
+  packageVersion: 1.0
+  assetPath: Assets/Orcs Pack/Models/OrcWarrior.fbx
+  uploadId: 227106
 ModelImporter:
-  serializedVersion: 19
-  fileIDToRecycleName:
-    100000: Bip001 Head
-    100002: Bip001 HeadNub
-    100004: Bip001 HeadNub_end
-    100006: Bip001 L Calf
-    100008: Bip001 L Clavicle
-    100010: Bip001 L Foot
-    100012: Bip001 L Forearm
-    100014: Bip001 L Hand
-    100016: Bip001 L Hand_end
-    100018: Bip001 L Thigh
-    100020: Bip001 L Toe0
-    100022: Bip001 L Toe01
-    100024: Bip001 L Toe02
-    100026: Bip001 L Toe0Nub
-    100028: Bip001 L Toe0Nub_end
-    100030: Bip001 L UpperArm
-    100032: Bip001 Neck
-    100034: Bip001 Pelvis
-    100036: Bip001 R Calf
-    100038: Bip001 R Clavicle
-    100040: Bip001 R Foot
-    100042: Bip001 R Forearm
-    100044: Bip001 R Hand
-    100046: Bip001 R Hand_end
-    100048: Bip001 R Thigh
-    100050: Bip001 R Toe0
-    100052: Bip001 R Toe01
-    100054: Bip001 R Toe02
-    100056: Bip001 R Toe0Nub
-    100058: Bip001 R Toe0Nub_end
-    100060: Bip001 R UpperArm
-    100062: Bip001 Spine
-    100064: Bip001 Spine1
-    100066: Bip001.001
-    100068: OrcWarrior
-    100070: //RootNode
-    400000: Bip001 Head
-    400002: Bip001 HeadNub
-    400004: Bip001 HeadNub_end
-    400006: Bip001 L Calf
-    400008: Bip001 L Clavicle
-    400010: Bip001 L Foot
-    400012: Bip001 L Forearm
-    400014: Bip001 L Hand
-    400016: Bip001 L Hand_end
-    400018: Bip001 L Thigh
-    400020: Bip001 L Toe0
-    400022: Bip001 L Toe01
-    400024: Bip001 L Toe02
-    400026: Bip001 L Toe0Nub
-    400028: Bip001 L Toe0Nub_end
-    400030: Bip001 L UpperArm
-    400032: Bip001 Neck
-    400034: Bip001 Pelvis
-    400036: Bip001 R Calf
-    400038: Bip001 R Clavicle
-    400040: Bip001 R Foot
-    400042: Bip001 R Forearm
-    400044: Bip001 R Hand
-    400046: Bip001 R Hand_end
-    400048: Bip001 R Thigh
-    400050: Bip001 R Toe0
-    400052: Bip001 R Toe01
-    400054: Bip001 R Toe02
-    400056: Bip001 R Toe0Nub
-    400058: Bip001 R Toe0Nub_end
-    400060: Bip001 R UpperArm
-    400062: Bip001 Spine
-    400064: Bip001 Spine1
-    400066: Bip001.001
-    400068: OrcWarrior
-    400070: //RootNode
-    4300000: OrcWarrior
-    9500000: //RootNode
-    13700000: OrcWarrior
+  serializedVersion: 22200
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: Bip001 Head
+  - first:
+      1: 100002
+    second: Bip001 HeadNub
+  - first:
+      1: 100004
+    second: Bip001 HeadNub_end
+  - first:
+      1: 100006
+    second: Bip001 L Calf
+  - first:
+      1: 100008
+    second: Bip001 L Clavicle
+  - first:
+      1: 100010
+    second: Bip001 L Foot
+  - first:
+      1: 100012
+    second: Bip001 L Forearm
+  - first:
+      1: 100014
+    second: Bip001 L Hand
+  - first:
+      1: 100016
+    second: Bip001 L Hand_end
+  - first:
+      1: 100018
+    second: Bip001 L Thigh
+  - first:
+      1: 100020
+    second: Bip001 L Toe0
+  - first:
+      1: 100022
+    second: Bip001 L Toe01
+  - first:
+      1: 100024
+    second: Bip001 L Toe02
+  - first:
+      1: 100026
+    second: Bip001 L Toe0Nub
+  - first:
+      1: 100028
+    second: Bip001 L Toe0Nub_end
+  - first:
+      1: 100030
+    second: Bip001 L UpperArm
+  - first:
+      1: 100032
+    second: Bip001 Neck
+  - first:
+      1: 100034
+    second: Bip001 Pelvis
+  - first:
+      1: 100036
+    second: Bip001 R Calf
+  - first:
+      1: 100038
+    second: Bip001 R Clavicle
+  - first:
+      1: 100040
+    second: Bip001 R Foot
+  - first:
+      1: 100042
+    second: Bip001 R Forearm
+  - first:
+      1: 100044
+    second: Bip001 R Hand
+  - first:
+      1: 100046
+    second: Bip001 R Hand_end
+  - first:
+      1: 100048
+    second: Bip001 R Thigh
+  - first:
+      1: 100050
+    second: Bip001 R Toe0
+  - first:
+      1: 100052
+    second: Bip001 R Toe01
+  - first:
+      1: 100054
+    second: Bip001 R Toe02
+  - first:
+      1: 100056
+    second: Bip001 R Toe0Nub
+  - first:
+      1: 100058
+    second: Bip001 R Toe0Nub_end
+  - first:
+      1: 100060
+    second: Bip001 R UpperArm
+  - first:
+      1: 100062
+    second: Bip001 Spine
+  - first:
+      1: 100064
+    second: Bip001 Spine1
+  - first:
+      1: 100066
+    second: Bip001.001
+  - first:
+      1: 100068
+    second: OrcWarrior
+  - first:
+      1: 100070
+    second: //RootNode
+  - first:
+      4: 400000
+    second: Bip001 Head
+  - first:
+      4: 400002
+    second: Bip001 HeadNub
+  - first:
+      4: 400004
+    second: Bip001 HeadNub_end
+  - first:
+      4: 400006
+    second: Bip001 L Calf
+  - first:
+      4: 400008
+    second: Bip001 L Clavicle
+  - first:
+      4: 400010
+    second: Bip001 L Foot
+  - first:
+      4: 400012
+    second: Bip001 L Forearm
+  - first:
+      4: 400014
+    second: Bip001 L Hand
+  - first:
+      4: 400016
+    second: Bip001 L Hand_end
+  - first:
+      4: 400018
+    second: Bip001 L Thigh
+  - first:
+      4: 400020
+    second: Bip001 L Toe0
+  - first:
+      4: 400022
+    second: Bip001 L Toe01
+  - first:
+      4: 400024
+    second: Bip001 L Toe02
+  - first:
+      4: 400026
+    second: Bip001 L Toe0Nub
+  - first:
+      4: 400028
+    second: Bip001 L Toe0Nub_end
+  - first:
+      4: 400030
+    second: Bip001 L UpperArm
+  - first:
+      4: 400032
+    second: Bip001 Neck
+  - first:
+      4: 400034
+    second: Bip001 Pelvis
+  - first:
+      4: 400036
+    second: Bip001 R Calf
+  - first:
+      4: 400038
+    second: Bip001 R Clavicle
+  - first:
+      4: 400040
+    second: Bip001 R Foot
+  - first:
+      4: 400042
+    second: Bip001 R Forearm
+  - first:
+      4: 400044
+    second: Bip001 R Hand
+  - first:
+      4: 400046
+    second: Bip001 R Hand_end
+  - first:
+      4: 400048
+    second: Bip001 R Thigh
+  - first:
+      4: 400050
+    second: Bip001 R Toe0
+  - first:
+      4: 400052
+    second: Bip001 R Toe01
+  - first:
+      4: 400054
+    second: Bip001 R Toe02
+  - first:
+      4: 400056
+    second: Bip001 R Toe0Nub
+  - first:
+      4: 400058
+    second: Bip001 R Toe0Nub_end
+  - first:
+      4: 400060
+    second: Bip001 R UpperArm
+  - first:
+      4: 400062
+    second: Bip001 Spine
+  - first:
+      4: 400064
+    second: Bip001 Spine1
+  - first:
+      4: 400066
+    second: Bip001.001
+  - first:
+      4: 400068
+    second: OrcWarrior
+  - first:
+      4: 400070
+    second: //RootNode
+  - first:
+      43: 4300000
+    second: OrcWarrior
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: OrcWarrior
+  externalObjects: {}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
-    rigImportErrors: 
-    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
+    extraUserProperties: []
     clipAnimations: []
     isReadable: 1
   meshes:
@@ -109,195 +268,50 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 0
+    importVisibility: 0
     importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    nodeNameCollisionStrategy: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
+    strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
-    human:
-    - boneName: Bip001 Pelvis
-      humanName: Hips
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Bip001 L Thigh
-      humanName: LeftUpperLeg
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Bip001 R Thigh
-      humanName: RightUpperLeg
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Bip001 L Calf
-      humanName: LeftLowerLeg
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Bip001 R Calf
-      humanName: RightLowerLeg
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Bip001 L Foot
-      humanName: LeftFoot
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Bip001 R Foot
-      humanName: RightFoot
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Bip001 Spine
-      humanName: Spine
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Bip001 Spine1
-      humanName: Chest
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Bip001 Neck
-      humanName: Neck
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Bip001 Head
-      humanName: Head
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Bip001 L Clavicle
-      humanName: LeftShoulder
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Bip001 R Clavicle
-      humanName: RightShoulder
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Bip001 L UpperArm
-      humanName: LeftUpperArm
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Bip001 R UpperArm
-      humanName: RightUpperArm
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Bip001 L Forearm
-      humanName: LeftLowerArm
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Bip001 R Forearm
-      humanName: RightLowerArm
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Bip001 L Hand
-      humanName: LeftHand
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Bip001 R Hand
-      humanName: RightHand
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Bip001 L Toe0
-      humanName: LeftToes
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Bip001 R Toe0
-      humanName: RightToes
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
+    serializedVersion: 3
+    human: []
     skeleton:
     - name: OrcWarrior(Clone)
       parentName: 
@@ -486,22 +500,20 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    globalScale: 1
+    rootMotionBoneName: Bip001.001
     hasTranslationDoF: 1
     hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 3
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
   humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  importBlendShapeDeformPercent: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 108361
-  packageName: Orc Caster and Fighter Pack
-  packageVersion: 1.0
-  assetPath: Assets/Orcs Pack/Models/OrcWarrior.fbx
-  uploadId: 227106

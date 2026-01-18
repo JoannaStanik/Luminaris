@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour
 {
-    public int damageToPlayer = 20;
-    public float attackCooldown = 2f;
+    public int damageToPlayer = 20;     // wartoœæ zabierana z ¿ycia gracza
+    public float attackCooldown = 2f;   // przerwa miêdzy atakami przeciwnika
 
     private float lastAttackTime;
 

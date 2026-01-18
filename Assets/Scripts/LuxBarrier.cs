@@ -3,9 +3,9 @@ using UnityEngine;
 public class LuxBarrier : MonoBehaviour
 {
     [Header("Ustawienia bariery")]
-    public float lifetime = 3f;
-    public float forwardOffset = 1.5f;
-    public float heightOffset = 1.0f;
+    public float lifetime = 3f;         // czas ¿ycia bariery
+    public float forwardOffset = 1.5f;  // odstêp pojawienia siê bariery od postaci
+    public float heightOffset = 1.0f;   // wysokoœæ na jakiej pojawi siê bariera
 
     [Header("HP bariery")]
     public int maxHits = 2;

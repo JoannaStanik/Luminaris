@@ -3,14 +3,20 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
+
+    // Obiekty konkretnych ekranów gry
     [Header("Panels")]
     [SerializeField] private GameObject panelStart;
     [SerializeField] private GameObject panelInstructions;
     [SerializeField] private GameObject panelHUD;
     [SerializeField] private GameObject panelPause;
+    [SerializeField] private GameObject panelGameOver;
 
     private bool isPaused = false;
     private bool gameStarted = false;
+    private bool isGameOver = false;
+
+    public PlayerHealth playerHealth;
 
     private void Start()
     {
@@ -22,6 +28,7 @@ public class UIManager : MonoBehaviour
     {
         if (!gameStarted) return;
 
+        // Menu pauzy po wciœniêciu klawisza Escape
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (isPaused)
@@ -45,6 +52,7 @@ public class UIManager : MonoBehaviour
         panelHUD.SetActive(true);
 
         gameStarted = true;
+        isGameOver = false;
         Time.timeScale = 1f;
     }
 
@@ -59,6 +67,8 @@ public class UIManager : MonoBehaviour
 
     public void ResumeGame()
     {
+        if (isGameOver) return;
+
         isPaused = false;
         Time.timeScale = 1f;
         panelPause.SetActive(false);
@@ -68,6 +78,48 @@ public class UIManager : MonoBehaviour
     {
         panelPause.SetActive(false);
         panelInstructions.SetActive(true);
+    }
+
+    // ---------- GAME OVER -----------
+    public void ShowGameOver()
+    {
+        isGameOver = true;
+        isPaused = false;
+
+        if (panelHUD != null) panelHUD.SetActive(false);
+        if (panelPause != null) panelPause.SetActive(false);
+        if (panelInstructions != null) panelInstructions.SetActive(false);
+        if (panelStart != null) panelStart.SetActive(false);
+
+        if (panelGameOver != null) panelGameOver.SetActive(true);
+
+        Time.timeScale = 0f;
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
+    public void OnClickRestart()
+    {
+        Time.timeScale = 0f;
+
+        isPaused = false;
+        isGameOver = false;
+        gameStarted = false;
+
+        if (panelHUD != null) panelHUD.SetActive(false);
+        if (panelPause != null) panelPause.SetActive(false);
+        if (panelInstructions != null) panelInstructions.SetActive(false);
+        if (panelGameOver != null) panelGameOver.SetActive(false);
+
+        ShowStart();
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        if (playerHealth != null)
+            playerHealth.ResetPlayer();
+
     }
 
     // ---------- EXIT ----------

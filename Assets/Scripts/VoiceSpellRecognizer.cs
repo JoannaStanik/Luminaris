@@ -28,16 +28,13 @@ public class VoiceSpellRecognizer : MonoBehaviour
             spellManager = FindObjectOfType<SpellManager>();
         }
 
+        // stworzenie listy zaklêæ/komend, które bêd¹ rozpoznawane przez system
         actions = new Dictionary<string, Action>(StringComparer.InvariantCultureIgnoreCase)
         {
             { "ignis",   () => spellManager.CastIgnis()   },
-            { "fulmen",  () => spellManager.CastFulmen()  },
-            { "terra",   () => spellManager.CastTerra()   },
             { "aeris",   () => spellManager.CastAeris()   },
             { "lux",     () => spellManager.CastLux()     },
-            { "curatio", () => spellManager.CastCuratio() },
-            { "tempus",  () => spellManager.CastTempus()  },
-            { "clarus",  () => spellManager.CastClarus()  }
+            { "abrario", () => spellManager.CastAbrario() }
         };
 
         recognizer = new KeywordRecognizer(actions.Keys.ToArray(), minConfidence);

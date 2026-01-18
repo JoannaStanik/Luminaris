@@ -3,10 +3,10 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerMovement : MonoBehaviour
 {
-    public float walkSpeed = 5f;
-    public float runSpeed = 9f;
-    public float jumpHeight = 8f;
-    public float gravity = 20f;
+    public float walkSpeed = 50f;      // prêdkoœæ chodu
+    public float runSpeed = 90f;       // prêdkoœæ biegu
+    public float jumpHeight = 20f;     // wysokoœæ skoku
+    public float gravity = 50f;        // grawitacja
 
     private CharacterController controller;
     private Animator animator;
@@ -52,9 +52,11 @@ public class PlayerMovement : MonoBehaviour
         {
             velocity.y = -1f;
 
+
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                velocity.y = jumpHeight;
+                velocity.y = Mathf.Sqrt(jumpHeight * 2f * gravity);
+                animator.ResetTrigger("Jump");
                 animator.SetTrigger("Jump");
             }
         }
@@ -64,5 +66,19 @@ public class PlayerMovement : MonoBehaviour
         }
 
         controller.Move(velocity * Time.deltaTime);
+    }
+
+    public void PlayerAttackAnimation()
+    {
+        if (animator == null) return;
+        animator.ResetTrigger("Attack");
+        animator.SetTrigger("Attack");
+    }
+
+    public void PlayerDefendAnimation()
+    {
+        if (animator == null) return;
+        animator.ResetTrigger("Defend");
+        animator.SetTrigger("Defend");
     }
 }

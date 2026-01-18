@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Fireball : MonoBehaviour
 {
+    // podstawowe wartoœci
     public float speed = 60f;
     public int damage = 25;
     public float lifeTime = 4f;
@@ -9,6 +10,7 @@ public class Fireball : MonoBehaviour
 
     void Update()
     {
+        // akcja po rozpoznaniu zaklêcia Ignis
         transform.position += transform.right * speed * Time.deltaTime;
     }
 
