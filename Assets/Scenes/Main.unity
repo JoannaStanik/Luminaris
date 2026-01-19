@@ -1585,13 +1585,7 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 41b408e8ed0fb4e46a0386a428c5f96d, type: 2}
     - target: {fileID: 95484865587539618, guid: 1621eb50b19ec86469b232f4b31cc904, type: 3}
       propertyPath: m_WarningMessage
-      value: "\nBinding warning: Some generic clip(s) animate transforms that are
-        already bound by a Humanoid avatar. These transforms can only be changed
-        by Humanoid clips.\n\tTransform 'Bip001.001'\n\tTransform 'Bip001 Head'\n\tTransform
-        'Bip001 L Foot'\n\tTransform 'Bip001 L Hand'\n\tTransform 'Bip001 L Calf'\n\tTransform
-        'Bip001 R Forearm'\n\tTransform 'Bip001 L Forearm'\n\tTransform 'Bip001 R
-        UpperArm'\n\tTransform 'Bip001 L UpperArm'\n\tTransform 'Bip001 R Calf'\n\tand
-        more ...\n\tFrom animation clip 'Walking'"
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 137030032692013256, guid: 1621eb50b19ec86469b232f4b31cc904, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -35127,7 +35121,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 7ad22cb4036eb9b438766a666f4909bd, type: 2}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 337487769228618744, guid: 1621eb50b19ec86469b232f4b31cc904, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4769121923383308, guid: 1621eb50b19ec86469b232f4b31cc904, type: 3}
       insertIndex: -1
@@ -35151,6 +35146,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1476020754429268, guid: 1621eb50b19ec86469b232f4b31cc904, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2088178899}
+    - targetCorrespondingSourceObject: {fileID: 1476020754429268, guid: 1621eb50b19ec86469b232f4b31cc904, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2088178901}
   m_SourcePrefab: {fileID: 100100000, guid: 1621eb50b19ec86469b232f4b31cc904, type: 3}
 --- !u!4 &1842601061 stripped
 Transform:
@@ -35817,13 +35815,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1885858713}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.7568751, y: -0.015381211, z: -0.00967359, w: 0.65330696}
+  m_LocalRotation: {x: 0.7652859, y: -0.07506932, z: 0.6375648, w: -0.047045365}
   m_LocalPosition: {x: 0.5045929, y: -121.84829, z: 0.016358733}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1050709327}
-  m_LocalEulerAnglesHint: {x: 98.642, y: 13.367996, z: 13.830994}
+  m_LocalEulerAnglesHint: {x: 178.641, y: -79.47601, z: 10.075}
 --- !u!1001 &1886060191
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40910,6 +40908,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageToPlayer: 20
   attackCooldown: 2
+--- !u!114 &2088178901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2088178888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c0be026468ca564c88a03572bc9b975, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBarPrefab: {fileID: 1768292229942100574, guid: c74556452d477e245ad6cd511ee54df7, type: 3}
 --- !u!1001 &2094190957
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41577,6 +41588,8 @@ MonoBehaviour:
   shield: {fileID: 0}
   animator: {fileID: 2113747055}
   getHitCooldown: 0.25
+  uiManager: {fileID: 349153828}
+  gameOverDelay: 1.2
 --- !u!114 &2113747054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41835,7 +41848,7 @@ MonoBehaviour:
   abrarioCost: 60
   player: {fileID: 2113747047}
   playerShield: {fileID: 0}
-  playerHealth: {fileID: 0}
+  playerHealth: {fileID: 2113747053}
 --- !u!4 &2119217857
 Transform:
   m_ObjectHideFlags: 0

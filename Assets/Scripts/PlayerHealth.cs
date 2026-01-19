@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
@@ -17,6 +18,8 @@ public class PlayerHealth : MonoBehaviour
 
     public int CurrentHealth => currentHealth;
     public bool IsDead { get; private set; }
+    public UIManager uiManager;
+    public float gameOverDelay = 1.2f;
 
     void Start()
     {
@@ -28,6 +31,8 @@ public class PlayerHealth : MonoBehaviour
         Debug.Log("PlayerHealth animator: " + (animator ? animator.name : "NULL"));
 
         OnHealthChanged?.Invoke(currentHealth, maxHealth);
+
+        if (uiManager == null) uiManager = GetComponentInChildren<UIManager>(true);
     }
 
     public void TakeDamage(int dmg)
@@ -77,6 +82,8 @@ public class PlayerHealth : MonoBehaviour
         if (attack != null) attack.enabled = false;
 
         Debug.Log("Player died");
+
+        StartCoroutine(ShowGameOverRealTime());
     }
 
     public void ResetPlayer()
@@ -96,5 +103,17 @@ public class PlayerHealth : MonoBehaviour
 
         var attack = GetComponent<PlayerAttack>();
         if (attack != null) attack.enabled = true;
+    }
+
+    private IEnumerator ShowGameOverRealTime()
+    {
+        yield return new WaitForSecondsRealtime(gameOverDelay);
+
+        if (uiManager == null) uiManager = FindObjectOfType<UIManager>(true);
+
+        if (uiManager != null)
+            uiManager.ShowGameOver();
+        else
+            Debug.LogError("UIManager nie znaleziony - GameOver nie mo¿e siê pokazaæ.");
     }
 }
