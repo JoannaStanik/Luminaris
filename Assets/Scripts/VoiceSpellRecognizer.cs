@@ -32,7 +32,7 @@ public class VoiceSpellRecognizer : MonoBehaviour
         actions = new Dictionary<string, Action>(StringComparer.InvariantCultureIgnoreCase)
         {
             { "ignis",   () => spellManager.CastIgnis()   },
-            { "aeris",   () => spellManager.CastAeris()   },
+            { "kuratio",   () => spellManager.CastKuratio()   },
             { "lux",     () => spellManager.CastLux()     },
             { "abrario", () => spellManager.CastAbrario() }
         };

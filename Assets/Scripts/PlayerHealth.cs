@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     public int maxHealth = 100;
-    int currentHealth;
+    [SerializeField] private int currentHealth;
 
     public ShieldController shield;
 
@@ -24,13 +24,14 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
+        IsDead = false;
 
         if (animator == null)
             animator = GetComponentInChildren<Animator>();
 
         Debug.Log("PlayerHealth animator: " + (animator ? animator.name : "NULL"));
 
-        OnHealthChanged?.Invoke(currentHealth, maxHealth);
+        NotifyHealthChanged();
 
         if (uiManager == null) uiManager = GetComponentInChildren<UIManager>(true);
     }
@@ -43,7 +44,7 @@ public class PlayerHealth : MonoBehaviour
         currentHealth -= dmg;
         if (currentHealth < 0) currentHealth = 0;
 
-        OnHealthChanged?.Invoke(currentHealth, maxHealth);
+        NotifyHealthChanged();
 
         if (animator != null && Time.time >= lastHitAnimTime + getHitCooldown)
         {
@@ -53,6 +54,19 @@ public class PlayerHealth : MonoBehaviour
         }
 
         if (currentHealth <= 0) Die();
+    }
+
+    public void Heal(int amount)
+    {
+        currentHealth += amount;
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+
+        NotifyHealthChanged();
+    }
+
+    private void NotifyHealthChanged()
+    {
+        OnHealthChanged?.Invoke(currentHealth, maxHealth);
     }
 
     void Die()
@@ -90,7 +104,8 @@ public class PlayerHealth : MonoBehaviour
     {
         IsDead = false;
         currentHealth = maxHealth;
-        OnHealthChanged?.Invoke(currentHealth, maxHealth);
+
+        NotifyHealthChanged();
 
         if (animator != null)
         {
