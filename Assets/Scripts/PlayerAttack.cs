@@ -14,6 +14,20 @@ public class PlayerAttack : MonoBehaviour
     public float hitCoolDown = 0.2f;
     private float lastHitTime = -999f;
 
+    [Header("DEBUG")]
+    public KeyCode debugAttackKey = KeyCode.T;
+    public bool enableDebugAttack = true;
+
+    public void Update()
+    {
+        if (!enableDebugAttack) return;
+
+        if (Input.GetKeyDown(debugAttackKey))
+        {
+            Debug.Log("T pressed");
+            DealDamage();
+        }
+    }
     public void DealDamage()
     {
         if (Time.time < lastHitTime + hitCoolDown) return;

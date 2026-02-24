@@ -18,15 +18,14 @@ public class Fireball : MonoBehaviour
     {
         Debug.Log("Fireball hit: " +  other.name);
 
-        if (other.CompareTag("Enemy"))
-        {
-            var hp = other.GetComponent<EnemyHealth>();
+           EnemyHealth hp = other.GetComponentInParent<EnemyHealth>();
+
             if (hp != null)
             {
                 Debug.Log("Enemy HP before hit");
                 hp.TakeDamage(damage);
+                Destroy(gameObject);
             }
-            Destroy(gameObject);
-        }
+        
     }
 }

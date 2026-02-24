@@ -17,6 +17,9 @@ public class SpellManager : MonoBehaviour
     public PlayerMana playerMana;
     public float ignisCost = 25f, kuratioCost = 50f, luxCost = 40f, abrarioCost = 60f;
 
+    [Header("Portal")]
+    public PortalAbrario portalInScene;
+
     [Header("Cooldowns (sekundy)")]
     public float ignisCooldown = 2.0f;
     public float kuratioCooldown = 3.0f;
@@ -162,6 +165,15 @@ public class SpellManager : MonoBehaviour
 
         Spawn(abrarioPrefab);
 
+        if (portalInScene != null)
+        {
+            Debug.Log("Casting Abrario -> activating portal: " +  portalInScene.name);
+            portalInScene.ActivatePortal();
+        }
+        else
+            Debug.LogWarning("SpellManager: portalInScene nie jest podpiêty!");
+
         SetOnCooldown(SpellType.Abrario);
     }
+
 }
