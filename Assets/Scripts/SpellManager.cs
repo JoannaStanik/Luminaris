@@ -6,6 +6,7 @@ public class SpellManager : MonoBehaviour
 {
     [Header("Spawn")]
     public Transform wandTip;
+    public Camera mainCam;
 
     [Header("Prefaby FX")]
     public GameObject ignisPrefab;     // kula ognia
@@ -39,6 +40,7 @@ public class SpellManager : MonoBehaviour
 
     void Awake()
     {
+        if (mainCam == null) mainCam = Camera.main;
         if (playerMana == null) playerMana = GetComponent<PlayerMana>();
         if (player == null) player = GetComponent<PlayerMovement>();
         if (playerHealth == null) playerHealth = GetComponent<PlayerHealth>();
@@ -115,7 +117,24 @@ public class SpellManager : MonoBehaviour
         if (!playerMana.TrySpend(ignisCost)) return;
 
         if (player != null) player.PlayerAttackAnimation();
-        Spawn(ignisPrefab);
+
+        Vector3 pos = wandTip != null ? wandTip.position : transform.position + transform.forward * 0.5f;
+
+        Quaternion rot;
+        Camera cam = Camera.main;
+        if (cam != null)
+            rot = Quaternion.LookRotation(cam.transform.forward, Vector3.up);
+        else
+            rot = wandTip != null ? wandTip.rotation : transform.rotation;
+
+        GameObject go = Instantiate(ignisPrefab, pos, rot);
+
+        if (go != null)
+        {
+            var homing = go.GetComponent<FireballHoming>();
+            if (homing != null)
+                homing.ownerRoot = transform.root;
+        }
 
         SetOnCooldown(SpellType.Ignis);
     }

@@ -30,14 +30,11 @@ public class EnemyHealthBarUI : MonoBehaviour
             return;
         }
 
-        // nad g³ow¹
         transform.position = target.transform.position + offset;
 
-        // zawsze do kamery
         if (cam != null)
             transform.forward = cam.transform.forward;
 
-        // aktualizacja HP
         slider.value = target.CurrentHealth;
     }
 }

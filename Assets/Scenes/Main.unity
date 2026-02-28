@@ -94,7 +94,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 112000000, guid: 8ff93cbaae468ef4e98fa34329a05500, type: 2}
-  m_LightingSettings: {fileID: 4890085278179872738, guid: d61271518a064c946b093b18ed1e46d6, type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 714024611cd8e7a438fb0845dfa942e8, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -3515,7 +3515,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 5500
   m_UseColorTemperature: 1
-  m_BoundingSphereOverride: {x: 3.3484e-41, y: 2.524355e-29, z: 0, w: -3.547292e-39}
+  m_BoundingSphereOverride: {x: 2.8054e-41, y: 2.524355e-29, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ForceVisible: 0
@@ -12281,7 +12281,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 17543
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 3.3484e-41, y: 2.524355e-29, z: 0, w: 8.2652e-40}
+  m_BoundingSphereOverride: {x: 3.048e-42, y: 2.524355e-29, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ForceVisible: 0
@@ -41808,9 +41808,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
-  m_Height: 1
+  m_Height: 3
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &2088178895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41869,6 +41869,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBarPrefab: {fileID: 1768292229942100574, guid: c74556452d477e245ad6cd511ee54df7, type: 3}
+  canvas: {fileID: 0}
 --- !u!1001 &2094190957
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42466,8 +42467,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 50
-  runSpeed: 90
-  jumpHeight: 40
+  runSpeed: 150
+  jumpHeight: 50
   gravity: 60
   cameraOrbit: {fileID: 1823688469}
 --- !u!136 &2113747048
@@ -42814,6 +42815,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wandTip: {fileID: 1885858717}
+  mainCam: {fileID: 0}
   ignisPrefab: {fileID: 6017669076177526738, guid: a159be4b62e2cc048ba08e95f26083a7, type: 3}
   kuratioPrefab: {fileID: 0}
   luxShieldPrefab: {fileID: 5276482930642254665, guid: 9b1ba9d8b6d5e2b4f8b93951cfa07f79, type: 3}
