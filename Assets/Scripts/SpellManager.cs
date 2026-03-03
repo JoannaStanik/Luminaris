@@ -14,6 +14,15 @@ public class SpellManager : MonoBehaviour
     public GameObject luxShieldPrefab; // bariera
     public GameObject abrarioPrefab;   // aktywacja portalu
 
+    [Header("Curatio VFX (circle)")]
+    public float kuratioGroundOffsetY = 0.02f;
+    public LayerMask groundMask = ~0;
+    public bool kuratioFollowPlayer = false;
+    public bool kuratioAlignToGround = true;
+    public float kuratioRaycastHeight = 2f;
+    public float kuratioRaycastDistance = 50f;
+    public float kuratioVfxLifetime = 2.5f;
+
     [Header("Mana")]
     public PlayerMana playerMana;
     public float ignisCost = 25f, kuratioCost = 50f, luxCost = 40f, abrarioCost = 60f;
@@ -44,6 +53,7 @@ public class SpellManager : MonoBehaviour
         if (playerMana == null) playerMana = GetComponent<PlayerMana>();
         if (player == null) player = GetComponent<PlayerMovement>();
         if (playerHealth == null) playerHealth = GetComponent<PlayerHealth>();
+        if (playerShield == null) playerShield = GetComponent<ShieldController>();
     }
 
     // -----------------------------
@@ -106,6 +116,49 @@ public class SpellManager : MonoBehaviour
     }
 
     // -----------------------------
+    // Kuratio spawn na ziemi pod graczem
+    // -----------------------------
+    private Transform GetCaster()
+    {
+        if (player != null) return player.transform;
+        if (playerHealth != null) return playerHealth.transform;
+        return transform;
+    }
+    private void SpawnKuratioOnGround()
+    {
+        if (kuratioPrefab == null)
+        {
+            Debug.LogWarning("Kuratio prefab nie jest przypiêty.");
+            return;
+        }
+
+        Transform caster = GetCaster();
+
+        Vector3 start = caster.position + Vector3.up * kuratioRaycastHeight;
+
+        if (Physics.Raycast(start, Vector3.down, out RaycastHit hit, kuratioRaycastDistance, groundMask))
+        {
+            Vector3 spawnPos = hit.point + Vector3.up * kuratioGroundOffsetY;
+
+            Quaternion rot = Quaternion.identity;
+            if (kuratioAlignToGround)
+                rot = Quaternion.FromToRotation(Vector3.up, hit.normal);
+
+            GameObject vfx = Instantiate(kuratioPrefab, spawnPos, rot);
+            Destroy(vfx, kuratioVfxLifetime);
+
+            if (kuratioFollowPlayer && vfx != null)
+                vfx.transform.SetParent(caster, true);
+        }
+        else
+        {
+            Vector3 pos = caster.position;
+            pos.y += kuratioGroundOffsetY;
+            Instantiate(kuratioPrefab, pos, Quaternion.identity);
+        }
+    }
+
+    // -----------------------------
     // Casty (z cooldownem + man¹)
     // -----------------------------
     public void CastIgnis()
@@ -145,10 +198,10 @@ public class SpellManager : MonoBehaviour
         if (!IsReady(SpellType.Kuratio)) return;
 
         if (playerMana == null) return;
-        if (playerHealth.CurrentHealth >= playerHealth.maxHealth) return;
+        if (playerHealth != null && playerHealth.CurrentHealth >= playerHealth.maxHealth) return;
         if (!playerMana.TrySpend(kuratioCost)) return;
 
-        Spawn(kuratioPrefab);
+        SpawnKuratioOnGround();
 
         if (playerHealth != null)
             playerHealth.Heal(30);

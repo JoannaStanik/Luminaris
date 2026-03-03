@@ -94,7 +94,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 112000000, guid: 8ff93cbaae468ef4e98fa34329a05500, type: 2}
-  m_LightingSettings: {fileID: 4890085278179872738, guid: 714024611cd8e7a438fb0845dfa942e8, type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: e0fa90943e498204096295e19ee177ca, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -229,8 +229,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -645.3, y: 178}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -830.6, y: 157.7}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6283428
 MonoBehaviour:
@@ -2449,8 +2449,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 605.6999, y: 189.40001}
-  m_SizeDelta: {x: 120, y: 20}
+  m_AnchoredPosition: {x: 826.4, y: 182.5}
+  m_SizeDelta: {x: 120, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &118450831
 MonoBehaviour:
@@ -3515,7 +3515,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 5500
   m_UseColorTemperature: 1
-  m_BoundingSphereOverride: {x: 2.8054e-41, y: 2.524355e-29, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 4.591775e-39, y: 2.2227777e-38, z: 9.1858e-41, w: -2.4405384e-30}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ForceVisible: 0
@@ -12281,7 +12281,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 17543
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 3.048e-42, y: 2.524355e-29, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 4.591775e-39, y: 2.2227777e-38, z: 9.1858e-41, w: -2.4405384e-30}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ForceVisible: 0
@@ -13809,10 +13809,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -15555,8 +15555,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 613.2999, y: 280.6}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 795.6, y: 366.89996}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &808654613
 MonoBehaviour:
@@ -26404,8 +26404,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 585.7, y: 218.7}
-  m_SizeDelta: {x: 160, y: 20}
+  m_AnchoredPosition: {x: 806.4, y: 233.8}
+  m_SizeDelta: {x: 160, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1386772029
 MonoBehaviour:
@@ -33306,8 +33306,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -645.7, y: 304.2}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -831, y: 392}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1699464566
 MonoBehaviour:
@@ -35621,8 +35621,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -645.39996, y: 243.9}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -830.69995, y: 276.2}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1838119028
 MonoBehaviour:
@@ -41869,7 +41869,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBarPrefab: {fileID: 1768292229942100574, guid: c74556452d477e245ad6cd511ee54df7, type: 3}
-  canvas: {fileID: 0}
 --- !u!1001 &2094190957
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42421,6 +42420,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1990947038607044, guid: 81a36287000ec184b83f902240cb8e2f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2113747056}
+    - targetCorrespondingSourceObject: {fileID: 1990947038607044, guid: 81a36287000ec184b83f902240cb8e2f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2113747057}
   m_SourcePrefab: {fileID: 100100000, guid: 81a36287000ec184b83f902240cb8e2f, type: 3}
 --- !u!1 &2113747045 stripped
 GameObject:
@@ -42585,6 +42587,22 @@ MonoBehaviour:
   hitCoolDown: 0.2
   debugAttackKey: 116
   enableDebugAttack: 1
+--- !u!114 &2113747057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2113747045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3010e3cba2b70a04ab202677bf1d592e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shieldPrefab: {fileID: 6287953604210959080, guid: 5156d6689efbccb4991059f3a5755566, type: 3}
+  worldOffset: {x: 0, y: -36.9, z: 0}
+  lifetime: 3
+  maxHits: 2
 --- !u!1001 &2115940996
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42817,9 +42835,18 @@ MonoBehaviour:
   wandTip: {fileID: 1885858717}
   mainCam: {fileID: 0}
   ignisPrefab: {fileID: 6017669076177526738, guid: a159be4b62e2cc048ba08e95f26083a7, type: 3}
-  kuratioPrefab: {fileID: 0}
-  luxShieldPrefab: {fileID: 5276482930642254665, guid: 9b1ba9d8b6d5e2b4f8b93951cfa07f79, type: 3}
+  kuratioPrefab: {fileID: 7986504087968017091, guid: 12a56ee4630040c4eb17ae9707ed4cef, type: 3}
+  luxShieldPrefab: {fileID: 6287953604210959080, guid: 5156d6689efbccb4991059f3a5755566, type: 3}
   abrarioPrefab: {fileID: 0}
+  kuratioGroundOffsetY: 5
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  kuratioFollowPlayer: 1
+  kuratioAlignToGround: 0
+  kuratioRaycastHeight: 2
+  kuratioRaycastDistance: 50
+  kuratioVfxLifetime: 2.5
   playerMana: {fileID: 2113747054}
   ignisCost: 25
   kuratioCost: 50
@@ -42831,7 +42858,7 @@ MonoBehaviour:
   luxCooldown: 8
   abrarioCooldown: 1
   player: {fileID: 2113747047}
-  playerShield: {fileID: 0}
+  playerShield: {fileID: 2113747057}
   playerHealth: {fileID: 2113747053}
 --- !u!4 &2119217857
 Transform:

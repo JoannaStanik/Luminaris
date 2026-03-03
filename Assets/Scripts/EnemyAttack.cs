@@ -28,7 +28,7 @@ public class EnemyAttack : MonoBehaviour
             if (player != null)
             {
                 player.TakeDamage(damageToPlayer);
-                lastAttackTime += Time.time;
+                lastAttackTime = Time.time;
             }
         }
     }

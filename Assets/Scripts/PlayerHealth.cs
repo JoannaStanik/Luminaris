@@ -21,6 +21,10 @@ public class PlayerHealth : MonoBehaviour
     public UIManager uiManager;
     public float gameOverDelay = 1.2f;
 
+    private void Awake()
+    {
+        if (shield == null) shield = GetComponent<ShieldController>();
+    }
     void Start()
     {
         currentHealth = maxHealth;
@@ -39,7 +43,14 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(int dmg)
     {
         if (IsDead) return;
-        if (shield != null && shield.IsActive) return;
+        if (shield != null && shield.IsActive)
+        {
+            var barrier = shield.GetComponentInChildren<LuxBarrier>();
+            if (barrier != null) barrier.TakeHit();
+            Debug.Log("Shield absorbed hit!");
+            return;
+        }
+            
 
         currentHealth -= dmg;
         if (currentHealth < 0) currentHealth = 0;

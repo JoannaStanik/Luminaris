@@ -1,27 +1,89 @@
 using UnityEngine;
-using System.Collections;
 
 public class ShieldController : MonoBehaviour
 {
-    public GameObject shieldVisual;
-    public float duration = 3f;
+    public GameObject shieldPrefab;
+    public Vector3 worldOffset = Vector3.zero;
 
-    public bool IsActive {  get; private set; }
+    public float lifetime = 3f;
+    public int maxHits = 2;
+
+    private GameObject currentShieldGO;
+    private LuxBarrier currentBarrier;
+    private float endTime;
+
+    public bool IsActive => currentShieldGO != null;
 
     public void Activate()
     {
-        if (IsActive) return;
-        StartCoroutine(Routine());
+        if (shieldPrefab == null)
+        {
+            Debug.LogWarning("ShieldController: Brak shieldPrefab!");
+            return;
+        }
+
+        if (currentShieldGO != null)
+        {
+            endTime = Time.time + lifetime;
+            if (currentBarrier != null) currentBarrier.ResetHits(maxHits);
+            return;
+        }
+
+        currentShieldGO = Instantiate(shieldPrefab, transform);
+        currentBarrier = currentShieldGO.GetComponent<LuxBarrier>();
+        if (currentBarrier != null)
+        {
+            currentBarrier.SetOwner(this);
+            currentBarrier.ResetHits(maxHits);
+        }
+
+        RepositionShield();
+
+        endTime = Time.time + lifetime;
     }
 
-    private IEnumerator Routine()
+    private void Update()
     {
-        IsActive = true;
-        if (shieldVisual != null) shieldVisual.SetActive(true);
+        if (currentShieldGO == null) return;
 
-        yield return new WaitForSeconds(duration);
+        RepositionShield();
 
-        if (shieldVisual != null) shieldVisual.SetActive(false);
-        IsActive = false;
+        if (Time.time >= endTime)
+            Deactivate();
+    }
+
+    private void RepositionShield()
+    {
+        var cc = GetComponent<CharacterController>();
+        if (cc != null)
+        {
+            Vector3 center = transform.TransformPoint(cc.center);
+            currentShieldGO.transform.position = center + worldOffset;
+            return;
+        }
+
+        var col = GetComponent<CapsuleCollider>();
+        if (col != null)
+        {
+            Vector3 center = transform.TransformPoint(col.center);
+            currentShieldGO.transform.position = center + worldOffset;
+            return;
+        }
+
+        currentShieldGO.transform.position = transform.position + Vector3.up * 1.0f + worldOffset;
+    }
+
+    public void Deactivate()
+    {
+        if (currentShieldGO != null)
+            Destroy(currentShieldGO);
+
+        currentShieldGO = null;
+        currentBarrier = null;
+    }
+
+    public void OnBarrierBroken()
+    {
+        Deactivate();
     }
 }

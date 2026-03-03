@@ -2,33 +2,26 @@ using UnityEngine;
 
 public class LuxBarrier : MonoBehaviour
 {
-    [Header("Ustawienia bariery")]
-    public float lifetime = 3f;         // czas ¿ycia bariery
-    public float forwardOffset = 1.5f;  // odstêp pojawienia siê bariery od postaci
-    public float heightOffset = 1.0f;   // wysokoœæ na jakiej pojawi siê bariera
-
     [Header("HP bariery")]
     public int maxHits = 2;
-    private int hitsLeft;
 
-    void Start()
+    private int hitsLeft;
+    private ShieldController owner;
+
+    private void OnEnable()
     {
         hitsLeft = maxHits;
+    }
 
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if (player != null)
-        {
-            Transform p = player.transform;
+    public void SetOwner(ShieldController shieldOwner)
+    {
+        owner = shieldOwner;
+    }
 
-            Vector3 pos = p.position + p.forward * forwardOffset;
-            pos.y += heightOffset;
-
-            transform.position = pos;
-
-            transform.rotation = Quaternion.LookRotation(p.forward, Vector3.up);
-        }
-
-        Destroy(gameObject, lifetime);
+    public void ResetHits(int newMaxHits)
+    {
+        maxHits = newMaxHits;
+        hitsLeft = maxHits;
     }
 
     public void TakeHit()
@@ -38,7 +31,10 @@ public class LuxBarrier : MonoBehaviour
         hitsLeft--;
         if (hitsLeft <= 0)
         {
-            Destroy(gameObject);
+            if (owner != null)
+                owner.OnBarrierBroken();
+            else
+                Destroy(gameObject);
         }
     }
 }
