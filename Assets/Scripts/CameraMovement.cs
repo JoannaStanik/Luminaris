@@ -13,24 +13,33 @@ public class CameraMovement : MonoBehaviour
     public bool isLocked = false;
 
     float rotationX = 0f;
+    float rotationY = 20f;
+
+    public float minY = -30f;
+    public float maxY = 60f;
 
     void Update()
     {
         if (isLocked || target == null) return;
 
+        // zoom
         float scroll = Input.GetAxis("Mouse ScrollWheel");
         distance -= scroll * zoomSpeed;
         distance = Mathf.Clamp(distance, minDistance, maxDistance);
 
         rotationX += Input.GetAxis("Mouse X") * mouseSensitivity;
+
+        rotationY -= Input.GetAxis("Mouse Y") * mouseSensitivity;
+        rotationY = Mathf.Clamp(rotationY, minY, maxY);
     }
 
     void LateUpdate()
     {
         if (isLocked || target == null) return;
 
-        Quaternion rotation = Quaternion.Euler(20f, rotationX, 0f);
+        Quaternion rotation = Quaternion.Euler(rotationY, rotationX, 0);
         Vector3 offset = rotation * new Vector3(0, 0, -distance);
+
         transform.position = target.position + offset + Vector3.up * cameraHeight;
         transform.LookAt(target.position + Vector3.up * 1.5f);
     }

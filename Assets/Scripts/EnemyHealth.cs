@@ -28,6 +28,7 @@ public class EnemyHealth : MonoBehaviour
     void Die()
     {
         Debug.Log($"{name} died");
+        KillCounter.Instance.AddKill();
         Destroy(gameObject);
     }
 }

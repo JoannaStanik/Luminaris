@@ -12,6 +12,12 @@ public class EnemyWalk : MonoBehaviour
     public float forgetRadius = 500f;
     public float startChaseDelayMax = 0.35f;
 
+    [Header("Animator")]
+    public Animator animator;
+    public string speedParam = "Speed";
+    public float speedThreshold = 0.1f;
+    public bool disableRootMotion = true;
+
     [Header("Debug")]
     public bool debug = true;
 
@@ -20,8 +26,16 @@ public class EnemyWalk : MonoBehaviour
     private bool isChasing;
     private float chaseDelay;
 
-    void Awake() => agent = GetComponent<NavMeshAgent>();
+    void Awake()
+    {
+        agent = GetComponent<NavMeshAgent>();
 
+        if (animator == null)
+            animator = GetComponentInChildren<Animator>();
+
+        if (animator != null && disableRootMotion)
+            animator.applyRootMotion = false;
+    }
     void Start()
     {
         if (target == null)
@@ -45,7 +59,12 @@ public class EnemyWalk : MonoBehaviour
 
     void Update()
     {
-        if (target == null) return;
+        if (target == null)
+        {
+            agent.isStopped = true;
+            UpdateAnimatorSpeed();
+            return;
+        }
 
         // Dystans PO ZIEMI (ignorujemy Y)
         Vector3 a = transform.position; a.y = 0f;
@@ -86,6 +105,22 @@ public class EnemyWalk : MonoBehaviour
             agent.SetDestination(target.position);
             t = 0.25f;
         }
+    }
+
+    private void UpdateAnimatorSpeed()
+    {
+        if (animator == null || agent == null)
+            return;
+
+        float speed01 = 0f;
+        if (!agent.isStopped && agent.speed > 0.01f)
+            speed01 = agent.velocity.magnitude / agent.speed;
+
+        speed01 = Mathf.Clamp01(speed01);
+
+        if (speed01 < speedThreshold) speed01 = 0f;
+
+        animator.SetFloat(speedParam, speed01);
     }
 
     void EnsureOnNav()
