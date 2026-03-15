@@ -85,8 +85,10 @@ public class SpellManager : MonoBehaviour
         return Mathf.Max(0f, readyTime - Time.time);
     }
 
-    public bool IsReady(SpellType t) => GetCooldownRemaining(t) <= 0.0001f;
-
+    public bool IsReady(SpellType t)
+    {
+        return GetCooldownRemaining(t) <= 0.0001f;
+    }
     private void SetOnCooldown(SpellType t)
     {
         float ready = Time.time + GetCooldownDuration(t);
